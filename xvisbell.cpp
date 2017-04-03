@@ -112,7 +112,7 @@ int main() {
                            &attrs);
 
   auto classHint = XAllocClassHint();
-  classHint.res_name = "xvisbell";
+  classHint->res_name = "xvisbell";
   XSetClassHint(dpy, win, classHint);
 
   while (true) {
