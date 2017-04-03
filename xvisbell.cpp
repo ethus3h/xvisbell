@@ -31,7 +31,7 @@
 #include <sys/select.h>
 #include <sys/time.h>
 
-const struct timeval window_timeout = {0, 100000};
+const struct timeval window_timeout = {0, 100000000};
 
 // -1 means for w or h means screen width or height
 struct {
