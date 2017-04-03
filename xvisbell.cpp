@@ -111,6 +111,10 @@ int main() {
                            CWBackPixel | CWOverrideRedirect | CWSaveUnder,
                            &attrs);
 
+  auto classHint = XAllocClassHint();
+  classHint.res_name = "xvisbell";
+  XSetClassHint(dpy, win, classHint);
+
   while (true) {
     struct timeval tv, *wait_tv = nullptr;
 
