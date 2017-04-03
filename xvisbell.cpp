@@ -31,7 +31,7 @@
 #include <sys/select.h>
 #include <sys/time.h>
 
-const struct timeval window_timeout = {0, 100000000};
+const struct timeval window_timeout = {0, 100000};
 
 // -1 means for w or h means screen width or height
 struct {
@@ -109,6 +109,9 @@ int main() {
                            vis,
                            CWBackPixel | CWOverrideRedirect | CWSaveUnder,
                            &attrs);
+  auto classHint = XAllocClassHint();
+  classHint.res_name = "xvisbell";
+  XSetClassHint(dpy, win, classHint);
 
   while (true) {
     struct timeval tv, *wait_tv = nullptr;
